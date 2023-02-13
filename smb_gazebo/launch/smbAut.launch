@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+    <!--  **************** Set the initial pose of the robot's main body ****************  -->
+    <arg name="x" default="13.0"/>
+    <arg name="y" default="6.0"/>
+    <arg name="z" default="0.8"/>
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+
+    <!--  **************** Maps ****************  -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find smb_gazebo)/maps/mapa.yaml" output="screen">
+        <param name="frame_id" value="map"/>
+    </node>
+
+    <!--  **************** Localization ****************  -->
+    <node pkg="amcl" type="amcl" name="amcl" output="screen">
+        <rosparam file="$(find smb_gazebo)/config/teb/amcl_params.yaml" command="load"/>
+    </node>
+
+    <!--  **************** Launch Static TF ****************  -->
+    <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_map_broadcaster" args=" 0 0 0 0 0 0 world map"/>
+    <!--  **************** TF odom ****************  -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="map_to_odom_broadcaster" args=" 0 0 0 0 0 0 map odom"/> -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_rslidar_lidar_link_broadcaster" args=" 0 0 0  0 0 0  odom rslidar_lidar_link" /> -->
+
+    <!--  **************** Convert 3D velodyne scan to laser scan ****************  -->
+    <node name= "pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" if="true">
+        <remap from="cloud_in" to="/rslidar_points"/>
+        <remap from="scan" to="/scan"/>
+        <rosparam>
+            target_frame: rslidar # Leave disabled to output scan in pointcloud frame
+            transform_tolerance: 0.01
+            min_height: 0.0
+            max_height: 0.1
+
+            angle_min: -1.5708 # -M_PI/2
+            angle_max: 1.5708 # M_PI/2
+            angle_increment: 0.0087 # M_PI/360.0
+            scan_time: 0.03333
+            range_min: 0.45
+            range_max: 50.0
+            use_inf: true
+            inf_epsilon: 1.0
+
+            # Concurrency level, affects number of pointclouds queued for processing and number of threads used
+            # 0 : Detect number of cores
+            # 1 : Single threaded
+            # 2->inf : Parallelism level
+            concurrency_level: 1
+        </rosparam>
+    </node>
+
+    <!--  **************** Move base ****************  -->
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find smb_gazebo)/config/teb/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+        <rosparam file="$(find smb_gazebo)/config/teb/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+        <rosparam file="$(find smb_gazebo)/config/teb/local_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find smb_gazebo)/config/teb/global_costmap_params.yaml" command="load"/>
+        <rosparam file="$(find smb_gazebo)/config/teb/teb_local_planner_params.yaml" command="load"/>
+
+        <remap from="cmd_vel" to="cmd_vel"/>
+        <remap from="odom" to="odom"/>
+        <remap from="scan" to="scan"/>
+
+        <param name="shutdown_costmaps" value="false"/>
+        <param name="oscillation_timeout" value="10.0"/>
+        <param name="oscillation_distance" value="0.2"/>
+        <param name="conservative_reset_dist" value="0.10"/>      
+
+        <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+            <param name="use_dijkstra" value="false"/> 
+            <param name="planner_frequency" value="1.0"/>
+            <param name="planner_patience" value="5.0"/>
+
+        <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
+            <param name="controller_frequency" value="5.0"/>
+            <param name="controller_patience" value="15.0"/>
+    </node>
+
+    <!--  **************** Load Gazebo world ****************  -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <env name="GAZEBO_MODEL_PATH" value="$(find smb_gazebo)/"/>
+        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+        <arg name="verbose" value="true"/>
+    </include>
+
+    <!--  **************** Spawn robot in Gazebo ****************  -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model smb -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" output="screen"/>
+
+    <node name="rob_st_pub" pkg="robot_state_publisher" type="robot_state_publisher">
+        <remap from="robot_description" to="my_robot_description"/>
+        <remap from="joint_states" to="different_joint_states"/>
+    </node>
+
+    <!--  **************** SMB Control ****************  -->
+    <include file="$(find smb_control)/launch/control.launch"/>
+
+    <!--  **************** Visualization ****************  -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_gazebo)/rviz/rviz_smb.rviz"/>
+
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Run xacro script to generate Super mega bot description -->
+  <!-- wheel_joint_type:=continuous or fixed -->
+  <param name="robot_description" command="$(find xacro)/xacro
+    $(find smb_description)/urdf/smb_standalone.urdf.xacro
+    wheel_joint_type:=continuous
+    simulation:=true
+    robot_namespace:= 
+    lidar:=true
+    description_name_xacro:=robot_description
+    publish_tf:=false"/>
+</launch>
