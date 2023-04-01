@@ -9,12 +9,6 @@
     <arg name="pitch" default="0.0"/>
     <arg name="yaw" default="0.0"/>
 
-    <!--  **************** Teleoperation ****************  -->
-    <node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" args="cmd_vel:/cmd_vel" output="screen">
-        <param name="speed" value="1.0"/>
-        <param name="turn" value="1.0"/>
-    </node>
-
     <!--  **************** HectorMapping ****************  -->
     <include file="$(find smb_gazebo)/launch/start_hector_mapping.launch"/>
 
