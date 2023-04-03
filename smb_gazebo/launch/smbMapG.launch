@@ -55,7 +55,7 @@
     <!--  **************** Load Gazebo world ****************  -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <env name="GAZEBO_MODEL_PATH" value="$(find smb_gazebo)/"/>
-        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld3.world"/>
+        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>
@@ -76,6 +76,6 @@
     <include file="$(find smb_control)/launch/control.launch"/>
 
     <!--  **************** Visualization ****************  -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_gazebo)/rviz/rviz_smb.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_gazebo)/rviz/smb_vis2.rviz"/>
 
 </launch>
