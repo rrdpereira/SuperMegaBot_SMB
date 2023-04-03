@@ -1,0 +1,22 @@
+<package>
+  <name>smb_path_planner</name>
+  <version>1.0.0</version>
+  <description>
+  	Path planner for SMB, based on ROS move_base.
+	</description>
+	
+  <maintainer email="lbartolomei@mavt.ethz.ch">Luca Bartolomei</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>smb_ompl_planner</run_depend>
+  <run_depend>smb_navigation</run_depend>
+  <run_depend>traversability_layer</run_depend>
+  <run_depend>smb_navigation_rviz</run_depend>
+  <run_depend>smb_navigation_scripts</run_depend>
+
+  <export>
+    <metapackage/>
+  </export>
+</package>

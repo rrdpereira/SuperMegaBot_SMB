@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="mission_file_name" default="mission.yaml" doc="Name of the mission file"/>
+  <arg name="mission_file_path" default="$(find smb_mission_planner)/configs/missions/$(arg mission_file_name)" doc="Path to the mission yaml file." />
+  <arg name="waypoint_topic_name" default="/move_base_simple/goal" doc="Topic where the waypoint positions are published."/>
+  <arg name="reference_frame" default="tracking_camera_odom" doc="The frame where the waypoints are going to be published."/>
+  <arg name="base_frame" default="base_link" doc="The  base frame of the robot."/>
+
+  <node pkg="smb_mission_planner"
+        type="mission_recorder_node.py"
+        name="mission_recorder_node"
+        output="screen"
+        args="$(arg mission_file_path) $(arg waypoint_topic_name) $(arg reference_frame) $(arg base_frame)">
+  </node>
+
+</launch>

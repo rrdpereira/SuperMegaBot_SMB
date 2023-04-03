@@ -53,7 +53,7 @@
     <!--  **************** Load Gazebo world ****************  -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <env name="GAZEBO_MODEL_PATH" value="$(find smb_gazebo)/"/>
-        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld.world"/>
+        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld3.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>

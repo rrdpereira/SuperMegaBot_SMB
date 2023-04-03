@@ -1,0 +1,27 @@
+waypoint_mission:
+  waypoint_1:
+    x_m: 2
+    y_m: 0
+    yaw_rad: 0
+  waypoint_2:
+    x_m: 4
+    y_m: 1
+    yaw_rad: 1.5708
+  waypoint_3:
+    x_m: 4
+    y_m: 6
+    yaw_rad: 1.5708
+
+twist_mission:
+  twist_1:
+    lin_vel: 1
+    ang_vel: 1
+    time: 5
+  twist_2:
+    lin_vel: 1
+    ang_vel: 1
+    time: 5
+  twist_3:
+    lin_vel: 1
+    ang_vel: 1
+    time: 5
