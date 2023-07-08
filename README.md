@@ -4,7 +4,6 @@ Project based on ETHZ 4 wheel Super Mega Bot (SMB) applications [[link]](https:/
 ## Intro 
 
 Autonomous Mobile Robot (AMR) Project for CCO - 728 - Autonomous Mobile Robot (Robôs Móveis Autônomos) course of PPGCC UFSCAr [[link]](https://www.ppgcc.ufscar.br/pt-br/programa/estrutura-curricular/disciplinas-do-programa/cco-728-robos-moveis-autonomos)
-# Projeto de Implementação 1 - smb_common
 
 ## Dependences
 
