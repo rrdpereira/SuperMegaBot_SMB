@@ -142,10 +142,16 @@ Para acessar o vídeo da execução do projeto com o robô atingindo o ponto des
 ### 📷 Screenshots
 
 <p align="center">
-  <img height=200px src="./docs/mapping/Screenshot (447).png" />
-  <img height=200px src="./docs/mapping/Screenshot (449).png" />
-  <img height=200px src="./docs/mapping/Screenshot (450).png" />
-  <img height=200px src="./docs/mapping/mob_robM_2023_04_03__02_14_58.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 11-57-43.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 11-59-25.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-07-17.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-07-23.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-09-31.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-09-36.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-12-28.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-12-34.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-12-57.png" />
+  <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-13-02.png" />
 </p>
 
 ## Execution
@@ -176,12 +182,12 @@ roslaunch projeto_rma.launch
 
 ## References
 
-https://ethz-robotx.github.io/SuperMegaBot/core-software/installation_core.html
+ * https://ethz-robotx.github.io/SuperMegaBot/core-software/installation_core.html
 
-https://ethz-robotx.github.io/SuperMegaBot/core-software/HowToRunSoftware.html
+ * https://ethz-robotx.github.io/SuperMegaBot/core-software/HowToRunSoftware.html
 
-https://unlimited.ethz.ch/display/ROBOTX/SuperMegaBot
+ * https://unlimited.ethz.ch/display/ROBOTX/SuperMegaBot
 
-https://github.com/ethz-asl/eth_supermegabot
+ * https://github.com/ethz-asl/eth_supermegabot
 
-https://github.com/cra-ros-pkg/robot_localization/blob/noetic-devel/params/ekf_template.yaml
+ * https://github.com/cra-ros-pkg/robot_localization/blob/noetic-devel/params/ekf_template.yaml
