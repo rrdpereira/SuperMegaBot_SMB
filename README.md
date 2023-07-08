@@ -81,10 +81,10 @@ Para acessar o vídeo da execução do projeto com o robô atingindo o ponto des
 ## 📷 Screenshots
 
 <p align="center">
-  <img height=200px src="./docs/Screenshot (447).png" />
-  <img height=200px src="./docs/Screenshot (449).png" />
-  <img height=200px src="./docs/Screenshot (450).png" />
-  <img height=200px src="./docs/mob_robM_2023_04_03__02_14_58.png" />
+  <img height=200px src="./docs/mapping/Screenshot (447).png" />
+  <img height=200px src="./docs/mapping/Screenshot (449).png" />
+  <img height=200px src="./docs/mapping/Screenshot (450).png" />
+  <img height=200px src="./docs/mapping/mob_robM_2023_04_03__02_14_58.png" />
 </p>
 
 ## 🎈 Intro
