@@ -10,7 +10,7 @@
     <arg name="yaw" default="0.0"/>
 
     <!--  **************** Maps ****************  -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find smb_gazebo)/maps/mapa.yaml" output="screen">
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find smb_gazebo)/maps/mob_robM_2023_04_03__02_14_58.yaml" output="screen">
         <param name="frame_id" value="map"/>
     </node>
 
@@ -26,37 +26,16 @@
     <node pkg="tf2_ros" type="static_transform_publisher" name="map_to_odom_broadcaster" args=" 0 0 0 0 0 0 map odom"/>
     <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="odom_to_rslidar_lidar_link_broadcaster" args=" 0 0 0  0 0 0  odom rslidar_lidar_link" /> -->
 
-    <!--  **************** Convert 3D velodyne scan to laser scan ****************  -->
-    <node name= "pointcloud_to_laserscan" pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" if="true">
-        <remap from="cloud_in" to="/rslidar_points"/>
-        <remap from="scan" to="/scan"/>
-        <rosparam>
-            target_frame: rslidar # Leave disabled to output scan in pointcloud frame
-            transform_tolerance: 0.01
-            min_height: 0.0
-            max_height: 0.1
+    <!-- Robot self-filtering and ground removal -->
+    <include file="$(find smb_navigation_scripts)/launch/filter_pointcloud_ground.launch"/>
 
-            angle_min: -1.5708 # -M_PI/2
-            angle_max: 1.5708 # M_PI/2
-            angle_increment: 0.0087 # M_PI/360.0
-            scan_time: 0.03333
-            range_min: 0.45
-            range_max: 50.0
-            use_inf: true
-            inf_epsilon: 1.0
-
-            # Concurrency level, affects number of pointclouds queued for processing and number of threads used
-            # 0 : Detect number of cores
-            # 1 : Single threaded
-            # 2->inf : Parallelism level
-            concurrency_level: 1
-        </rosparam>
-    </node>
+    <!-- Mapping -->
+    <include file="$(find smb_navigation)/launch/mapping/point_cloud_to_scan.launch"/>
 
     <!--  **************** Load Gazebo world ****************  -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <env name="GAZEBO_MODEL_PATH" value="$(find smb_gazebo)/"/>
-        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld3.world"/>
+        <arg name="world_name" value="$(find smb_gazebo)/worlds/testWorld.world"/>
         <arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="gui" value="true"/>
@@ -77,6 +56,6 @@
     <include file="$(find smb_control)/launch/control.launch"/>
 
     <!--  **************** Visualization ****************  -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_gazebo)/rviz/rviz_smb.rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find smb_gazebo)/rviz/rviz_smbTelMap.rviz"/>
 
 </launch>
