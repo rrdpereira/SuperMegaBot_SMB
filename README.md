@@ -14,88 +14,104 @@ sudo apt-get install ros-noetic-amcl ros-noetic-costmap-converter ros-noetic-dep
 ```
 After that, it is necessary to clone the project inside a catkin workspace. If there isn't a catkin workspace, you can create by this tutorial [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), or you can create using the following bash steps:
 
-``` sh
+```bash
 # source ROS1 Noetic
 source /opt/ros/noetic/setup.bash
 # create the directories
-mkdir -p ~/catkin_workspace/src
-cd ~/catkin_workspace/
+mkdir -p /home/$USER/catkin_workspace/src
+cd /home/$USER/catkin_workspace/
 # initilize the catkin workspace
 catkin init
 catkin config --extend /opt/ros/noetic
 catkin config -DCMAKE_BUILD_TYPE=Release
 # navigate to the directory of src to clone SuperMegaBot_SMB project
-cd ~/catkin_workspace/src
+cd /home/$USER/catkin_workspace/src
 git clone https://github.com/rrdpereira/SuperMegaBot_SMB.git
 # build the project
-cd ~/catkin_workspace/
+cd /home/$USER/catkin_workspace/
 catkin build
 # source your catkin worksapce
-source ~/catkin_workspace/devel/setup.bash
+source /home/$USER/catkin_workspace/devel/setup.bash
 
 # (optinal) may you found some errors, so you can use the "Magic" of rosdep
-cd ~/catkin_workspace/src
+cd /home/$USER/catkin_workspace/src
 rosdep install --from-paths . --ignore-src --os=ubuntu:focal -r -y
-cd ~/catkin_workspace/
+cd /home/$USER/catkin_workspace/
 catkin build
 # source your catkin worksapce
-source ~/catkin_workspace/devel/setup.bash
+source /home/$USER/catkin_workspace/devel/setup.bash
 ```
 
-## Run Teleoperation Mode
+## Run Teleoperation Mode Without Map
 
-To run the simulation with one controllable robot
-
-```bash
-roslaunch travesim simulation_robot.launch
-```
-
-To run the simulation with the entire team
+To run the teleoperation mode of simulation without map:
 
 ```bash
-roslaunch travesim simulation_team.launch
-```
-
-To run the simulation of a match
-
-```bash
-roslaunch travesim simulation_match.launch
+roslaunch smb_gazebo smbTelNoMap.launch
 ```
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running teleoperation mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and preview by the following screenshots:
+You can watch the running teleoperation mode without map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
 
 <p align="center">
-  <img height=200px src="./docs/teleoperation/Screenshot (447).png" />
-  <img height=200px src="./docs/teleoperation/Screenshot (449).png" />
-  <img height=200px src="./docs/teleoperation/Screenshot (450).png" />
-  <img height=200px src="./docs/teleoperation/mob_robM_2023_04_03__02_14_58.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-16.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-19.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-22.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-25.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-28.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-31.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-37.png" />
+  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-42.png" />
+</p>
+
+## Run Teleoperation Mode With Map
+
+To run the teleoperation mode of simulation with map:
+
+```bash
+roslaunch smb_gazebo smbTelMap.launch
+```
+
+### 📷 Screenshots and Demostration Video
+
+You can watch the running teleoperation mode with map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
+
+<p align="center">
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-08.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-11.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-22.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-28.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-52.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-27.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-34.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-38.png" />
+  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-42.png" />
 </p>
 
 ## Run Mapping Mode
 
-To run the simulation with one controllable robot
+To run the mapping mode of simulation with Gmapping package:
 
 ```bash
-roslaunch travesim simulation_robot.launch
+roslaunch smb_gazebo smbMapG.launch
+```
+In another terminal launch the teleoperion:
+
+```bash
+roslaunch smb_gazebo smbTel.launch
 ```
 
-To run the simulation with the entire team
+In another terminal launch the map saver:
 
 ```bash
-roslaunch travesim simulation_team.launch
-```
-
-To run the simulation of a match
-
-```bash
-roslaunch travesim simulation_match.launch
+cd /home/$USER/catkin_workspace/src/SuperMegaBot_SMB/smb_gazebo/bash
+watch -n 10 ./map_datehour.sh
 ```
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running mapping mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and preview by the following screenshots:
+You can watch the running mapping mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/mapping/Screenshot (447).png" />
@@ -112,27 +128,15 @@ You can watch the running mapping mode demonstration by the Youtube link [[link]
 
 ## Run Autonomous Mode
 
-To run the simulation with one controllable robot
+To run the autonomous mode of simulation with Navigation Stack package:
 
 ```bash
-roslaunch travesim simulation_robot.launch
-```
-
-To run the simulation with the entire team
-
-```bash
-roslaunch travesim simulation_team.launch
-```
-
-To run the simulation of a match
-
-```bash
-roslaunch travesim simulation_match.launch
+roslaunch smb_gazebo smbAut.launch
 ```
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running autonomous mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and preview by the following screenshots:
+You can watch the running autonomous mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 11-57-43.png" />
