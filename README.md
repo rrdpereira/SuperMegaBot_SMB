@@ -179,7 +179,7 @@ You can watch the running autonomous mode demonstration by the Youtube link [[li
   <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-13-02.png" />
 </p>
 
-## 07 - References links
+## 07 - References
 
  * https://ethz-robotx.github.io/SuperMegaBot/core-software/installation_core.html
 
