@@ -111,7 +111,7 @@ watch -n 10 ./map_datehour.sh
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running mapping mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
+You can watch the running mapping mode demonstration by the Youtube link [[link]](https://youtu.be/asX_q9aF6q0), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/mapping/Screenshot (447).png" />
@@ -136,7 +136,7 @@ roslaunch smb_gazebo smbAut.launch
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running autonomous mode demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
+You can watch the running autonomous mode demonstration by the Youtube link [[link]](https://youtu.be/VhXPYllWjg8), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 11-57-43.png" />
