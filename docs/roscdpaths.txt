@@ -1,0 +1,3 @@
+cd /home/vega/wksp/src
+cd ~/wksp/src
+cd /home/$USER/wksp/src

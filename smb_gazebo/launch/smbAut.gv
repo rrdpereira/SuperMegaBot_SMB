@@ -1,0 +1,19 @@
+digraph G {
+"base_link" -> "base_inertia"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"odom" -> "base_link"[label=" Broadcaster: /ekf_localization\nAverage rate: 50.201\nBuffer length: 4.98\nMost recent transform: 29.228\nOldest transform: 24.248\n"];
+"base_link" -> "imu_link"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "lidar_mount_link"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "rslidar_base_link"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"rslidar_base_link" -> "rslidar"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"base_link" -> "top"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"world" -> "map"[label=" Broadcaster: /world_to_map_broadcaster\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"map" -> "odom"[label=" Broadcaster: /amcl\nAverage rate: 10.238\nBuffer length: 4.884\nMost recent transform: 30.161\nOldest transform: 25.277\n"];
+"base_link" -> "LF_WHEEL"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 50.0\nBuffer length: 4.96\nMost recent transform: 29.221\nOldest transform: 24.261\n"];
+"base_link" -> "LH_WHEEL"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 50.0\nBuffer length: 4.96\nMost recent transform: 29.221\nOldest transform: 24.261\n"];
+"base_link" -> "RF_WHEEL"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 50.0\nBuffer length: 4.96\nMost recent transform: 29.221\nOldest transform: 24.261\n"];
+"base_link" -> "RH_WHEEL"[label=" Broadcaster: /smb_robot_state_publisher\nAverage rate: 50.0\nBuffer length: 4.96\nMost recent transform: 29.221\nOldest transform: 24.261\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 29.257"[ shape=plaintext ] ;
+}->"world";
+}
