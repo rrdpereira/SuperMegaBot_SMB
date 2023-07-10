@@ -62,8 +62,35 @@ You can watch the running teleoperation mode without map demonstration by the Yo
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-28.png" />
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-31.png" />
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-37.png" />
+</p>
+
+After you finished mapping, go to ***2D_maps*** folder:
+
+```bash
+cd /home/$USER/2D_maps
+```
+
+And select the best map among the others, like to the following screenshots 📷:
+
+<p align="center">
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 23-51-54.png" />
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-42.png" />
 </p>
+
+Copy map name, our case is:
+```bash
+/home/$USER/2D_maps/mob_robM_2023_04_03__02_14_58.pgm
+/home/$USER/2D_maps/mob_robM_2023_04_03__02_14_58.yaml
+```
+
+Finally, change map name on ***map_server*** node of the ***smbAut.launch*** and ***smbTelMap.launch*** launcher files:
+
+```xml
+    <!--  **************** Maps ****************  -->
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find smb_gazebo)/maps/mob_robM_2023_04_03__02_14_58.yaml" output="screen">
+        <param name="frame_id" value="map"/>
+    </node>
+```
 
 ## Run Teleoperation Mode With Map
 
