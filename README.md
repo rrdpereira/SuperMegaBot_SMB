@@ -91,7 +91,7 @@ You can watch the running teleoperation mode with map demonstration by the Youtu
 
 ## Run Mapping Mode
 
-To run the mapping mode of simulation with Gmapping package:
+To run the mapping mode of simulation with Gmapping [[link]](http://wiki.ros.org/gmapping) package:
 
 ```bash
 roslaunch smb_gazebo smbMapG.launch
@@ -128,7 +128,7 @@ You can watch the running mapping mode demonstration by the Youtube link [[link]
 
 ## Run Autonomous Mode
 
-To run the autonomous mode of simulation with Navigation Stack package:
+To run the autonomous mode of simulation with Navigation Stack [[link]](http://wiki.ros.org/navigation/Tutorials/RobotSetup) package:
 
 ```bash
 roslaunch smb_gazebo smbAut.launch
@@ -162,3 +162,9 @@ You can watch the running autonomous mode demonstration by the Youtube link [[li
  * https://github.com/ethz-asl/eth_supermegabot
 
  * https://github.com/cra-ros-pkg/robot_localization/blob/noetic-devel/params/ekf_template.yaml
+
+ * http://wiki.ros.org/gmapping
+
+ * http://wiki.ros.org/move_base
+
+ * http://wiki.ros.org/navigation/Tutorials/RobotSetup
