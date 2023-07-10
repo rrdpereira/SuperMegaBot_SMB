@@ -1,11 +1,11 @@
 # SuperMegaBot_SMB
 Project based on ETHZ 4 wheel Super Mega Bot (SMB) applications [[link]](https://ethz-robotx.github.io/SuperMegaBot/)
 
-## Intro 
+## 01 - Intro 
 
 Autonomous Mobile Robot (AMR) Project for CCO - 728 - Autonomous Mobile Robot (Robôs Móveis Autônomos) course of PPGCC UFSCAr [[link]](https://www.ppgcc.ufscar.br/pt-br/programa/estrutura-curricular/disciplinas-do-programa/cco-728-robos-moveis-autonomos)
 
-## Dependences
+## 02 - Dependences
 
 This package was implemented on Linux Ubuntu 20.04 Focal Fossa [[link]](https://releases.ubuntu.com/focal/) distribution using ROS1 Noetic Ninjemys [[link]](http://wiki.ros.org/noetic). The installation of the necessary ROS Noectic packages can be done with following bash command:
 
@@ -42,7 +42,7 @@ catkin build
 source /home/$USER/catkin_workspace/devel/setup.bash
 ```
 
-## Run Teleoperation Mode Without Map
+## 03 - Run Teleoperation Mode Without Map
 
 To run the teleoperation mode of simulation without map:
 
@@ -65,7 +65,7 @@ You can watch the running teleoperation mode without map demonstration by the Yo
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-42.png" />  
 </p>
 
-## Run Teleoperation Mode With Map
+## 04 - Run Teleoperation Mode With Map
 
 To run the teleoperation mode of simulation with map:
 
@@ -89,7 +89,7 @@ You can watch the running teleoperation mode with map demonstration by the Youtu
   <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-18-42.png" />
 </p>
 
-## Run Mapping Mode
+## 05 - Run Mapping Mode
 
 To run the mapping mode of simulation with Gmapping [[link]](http://wiki.ros.org/gmapping) package:
 
@@ -154,7 +154,7 @@ Finally, change map name on ***map_server*** node of the ***smbAut.launch*** and
     </node>
 ```
 
-## Run Autonomous Mode
+## 06 - Run Autonomous Mode
 
 To run the autonomous mode of simulation with Navigation Stack [[link]](http://wiki.ros.org/navigation/Tutorials/RobotSetup) package:
 
@@ -179,7 +179,7 @@ You can watch the running autonomous mode demonstration by the Youtube link [[li
   <img height=200px src="./docs/autonomous/Screenshot from 2023-07-07 12-13-02.png" />
 </p>
 
-## References
+## 07 - References links
 
  * https://ethz-robotx.github.io/SuperMegaBot/core-software/installation_core.html
 
