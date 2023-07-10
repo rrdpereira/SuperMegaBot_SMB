@@ -55,14 +55,14 @@ roslaunch smb_gazebo smbTelNoMap.launch
 You can watch the running teleoperation mode without map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
 
 <p align="center">
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-16.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-19.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-22.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-25.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-28.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-31.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-37.png" />
-  <img height=200px src="./docs/teleoperationNoMap/Screenshot from 2023-07-09 21-19-42.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-16.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-19.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-22.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-25.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-28.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-31.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-37.png" />
+  <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-42.png" />
 </p>
 
 ## Run Teleoperation Mode With Map
@@ -78,15 +78,15 @@ roslaunch smb_gazebo smbTelMap.launch
 You can watch the running teleoperation mode with map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
 
 <p align="center">
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-08.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-11.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-22.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-28.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-17-52.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-27.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-34.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-38.png" />
-  <img height=200px src="./docs/teleoperationMap/Screenshot from 2023-07-09 21-18-42.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-08.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-11.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-22.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-28.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-52.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-18-27.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-18-34.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-18-38.png" />
+  <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-18-42.png" />
 </p>
 
 ## Run Mapping Mode
