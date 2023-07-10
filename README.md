@@ -52,7 +52,7 @@ roslaunch smb_gazebo smbTelNoMap.launch
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running teleoperation mode without map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
+You can watch the running teleoperation mode without map demonstration by the Youtube link [[link]](https://youtu.be/xePItFsvwa8), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/teloperationNoMap/Screenshot from 2023-07-09 21-19-16.png" />
@@ -75,7 +75,7 @@ roslaunch smb_gazebo smbTelMap.launch
 
 ### 📷 Screenshots and Demostration Video
 
-You can watch the running teleoperation mode with map demonstration by the Youtube link [[link]](http://wiki.ros.org/catkin/Tutorials/create_a_workspace), and the preview by the following screenshots:
+You can watch the running teleoperation mode with map demonstration by the Youtube link [[link]](https://youtu.be/zgQhkdO1E6o), and the preview by the following screenshots:
 
 <p align="center">
   <img height=200px src="./docs/teloperationMap/Screenshot from 2023-07-09 21-17-08.png" />
