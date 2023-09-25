@@ -3,7 +3,7 @@ Project based on ETHZ 4 wheel Super Mega Bot (SMB) applications [[link]](https:/
 
 ## 01 - Intro 
 
-Autonomous Mobile Robot (AMR) Project, implemented by Robson Rogério Dutra Pereira, for CCO - 728 - Autonomous Mobile Robot (Robôs Móveis Autônomos) course of PPGCC UFSCAr [[link]](https://www.ppgcc.ufscar.br/pt-br/programa/estrutura-curricular/disciplinas-do-programa/cco-728-robos-moveis-autonomos)
+Autonomous Mobile Robot (AMR) Project, implemented by Robson Rogério Dutra Pereira (rrdpereira) [[link]](https://github.com/rrdpereira/), for CCO - 728 - Autonomous Mobile Robot (Robôs Móveis Autônomos) course of PPGCC UFSCAr [[link]](https://www.ppgcc.ufscar.br/pt-br/programa/estrutura-curricular/disciplinas-do-programa/cco-728-robos-moveis-autonomos)
 
 ## 02 - Dependences
 
