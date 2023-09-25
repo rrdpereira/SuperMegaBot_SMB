@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
+<!-- 
+control.launch
 
+Created by: Robson Rogério Dutra Pereira on 01.Out.2022
+Last Modified: rrdpereira
+
+Description: SMB control launcher.
+-->
 <launch>
   <!--  **************** Load robot description for gazebo ****************  -->
   <include file="$(find smb_description)/launch/load.launch"/>

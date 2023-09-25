@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 
+smbTelNoMap.launch
 
+Created by: Robson Rogério Dutra Pereira on 01.Out.2022
+Last Modified: rrdpereira
+
+Description: SMB teleoperation without map launcher.
+-->
 <launch>
     <!--  **************** Set the initial pose of the robot's main body ****************  -->
     <arg name="x" default="13.0"/>
