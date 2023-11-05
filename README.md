@@ -7,6 +7,15 @@ Autonomous Mobile Robot (AMR) Project, implemented by Robson Rogério Dutra Pere
 
 ## 02 - Dependences
 
+| Operational System 	         |  Ubuntu 20.04            | 
+| ---------------------------- | ------------------------ |
+| ROS 	                       | ![image](https://user-images.githubusercontent.com/74054598/149457205-fd48db89-0658-4511-af36-bcd8662562da.png)| 
+| Gazebo    	                 | Gazebo multi-robot simulator - version 11.13.0     | 
+
+**Features**
+   - Mobile robot
+   - 2D LiDAR
+
 This package was implemented on Linux Ubuntu 20.04 Focal Fossa [[link]](https://releases.ubuntu.com/focal/) distribution using ROS1 Noetic Ninjemys [[link]](http://wiki.ros.org/noetic). The installation of the necessary ROS Noectic packages can be done with following bash command:
 
 ```bash
